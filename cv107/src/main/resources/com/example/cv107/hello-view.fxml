@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#create" prefHeight="520.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv107.homecontroller">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="129.0" prefHeight="94.0" prefWidth="318.0" text="Welcome to CV Builder" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button layoutX="208.0" layoutY="287.0" mnemonicParsing="false" onAction="#create" prefHeight="48.0" prefWidth="133.0" text="Create CV" />
+   </children>
+</AnchorPane>
