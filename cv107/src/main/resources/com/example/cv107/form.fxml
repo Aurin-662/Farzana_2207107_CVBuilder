@@ -10,179 +10,183 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <ScrollPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv107.formcontroller">
-   <content>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #542344;">
-         <children>
-            <VBox layoutX="20.0" prefHeight="830.0" prefWidth="594.0">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="614.0" text="Provide your informations" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </Label>
-                  <Label prefHeight="18.0" prefWidth="78.0" text="Full Name :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="user" prefHeight="26.0" prefWidth="271.0" promptText="Enter your Full Name" style="-fx-background-color: #542344; -fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-text-fill: white;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextField>
-                  <Label text="Email Address :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="email" promptText="Enter Your Email Address" style="-fx-background-color: #542344; -fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-text-fill: white;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextField>
-                  <Label text="Mobile Number :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="mobile" promptText="Enter your Mobile Number" style="-fx-border-radius: 6; -fx-border-color: #f2eff4; -fx-background-color: #542344; -fx-text-fill: white;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextField>
-                  <Label text="Address :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="address" promptText="Enter Your Address" style="-fx-border-color: #f2eff4; -fx-border-radius: 6; -fx-background-color: #542344; -fx-text-fill: white;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextField>
-                  <Label text="Educational Qualifications :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="education" prefHeight="66.0" prefWidth="484.0" promptText="Enter your educational qualification" style="-fx-background-color: #542344; -fx-background-radius: 6; -fx-border-color: #f2eff4;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextArea>
-                  <Label text="Projects :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="projects" prefHeight="50.0" prefWidth="504.0" promptText="Write about the projects you have done" style="-fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-background-color: #542344;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextArea>
-                  <Label text="Skills :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="skills" prefHeight="78.0" prefWidth="504.0" promptText="Write down your skills" style="-fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-background-color: #542344;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextArea>
-                  <Label text="Work Experience :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="ex" prefHeight="101.0" prefWidth="484.0" promptText="Enter your work experience" style="-fx-background-color: #542344; -fx-background-radius: 8; -fx-border-color: #f2eff4;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextArea>
-                  <Label fx:id="about" text="summery :" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="ab" prefHeight="135.0" prefWidth="504.0" promptText="About Yourself" style="-fx-background-radius: 8; -fx-border-color: #f2eff4; -fx-background-color: #542344;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="100.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </TextArea>
-                  <Button mnemonicParsing="false" onAction="#generate" prefHeight="40.0" prefWidth="154.0" style="-fx-border-color: #e6d3f2; -fx-background-color: #ac799b;" text="Generate CV" textFill="WHITE">
+    <content>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #542344;">
+            <children>
+                <VBox layoutX="20.0" prefHeight="830.0" prefWidth="594.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="614.0" text="Provide your informations" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </Label>
+                        <Label prefHeight="18.0" prefWidth="78.0" text="Full Name :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="user" prefHeight="26.0" prefWidth="271.0" promptText="Enter your Full Name" style="-fx-background-color: #542344; -fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-text-fill: white;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextField>
+                        <Label text="Email Address :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="email" promptText="Enter Your Email Address" style="-fx-background-color: #542344; -fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-text-fill: white;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextField>
+                        <Label text="Mobile Number :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="mobile" promptText="Enter your Mobile Number" style="-fx-border-radius: 6; -fx-border-color: #f2eff4; -fx-background-color: #542344; -fx-text-fill: white;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextField>
+                        <Label text="Address :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="address" promptText="Enter Your Address" style="-fx-border-color: #f2eff4; -fx-border-radius: 6; -fx-background-color: #542344; -fx-text-fill: white;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextField>
+                        <Label text="Educational Qualifications :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="education" prefHeight="66.0" prefWidth="484.0" promptText="Enter your educational qualification" style="-fx-background-color: #542344; -fx-background-radius: 6; -fx-border-color: #f2eff4;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextArea>
+                        <Label text="Projects :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="projects" prefHeight="50.0" prefWidth="504.0" promptText="Write about the projects you have done" style="-fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-background-color: #542344;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextArea>
+                        <Label text="Skills :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="skills" prefHeight="78.0" prefWidth="504.0" promptText="Write down your skills" style="-fx-background-radius: 6; -fx-border-color: #f2eff4; -fx-background-color: #542344;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextArea>
+                        <Label text="Work Experience :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="ex" prefHeight="101.0" prefWidth="484.0" promptText="Enter your work experience" style="-fx-background-color: #542344; -fx-background-radius: 8; -fx-border-color: #f2eff4;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextArea>
+                        <Label fx:id="about" text="summery :" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="ab" prefHeight="135.0" prefWidth="504.0" promptText="About Yourself" style="-fx-background-radius: 8; -fx-border-color: #f2eff4; -fx-background-color: #542344;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" right="100.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </TextArea>
+                  <Button fx:id="img" mnemonicParsing="false" onAction="#up" style="-fx-background-color: #f2eff4;" text="Upload Image">
                      <VBox.margin>
                         <Insets bottom="20.0" left="10.0" />
                      </VBox.margin>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
                   </Button>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
-   </content>
+                        <Button mnemonicParsing="false" onAction="#generate" prefHeight="40.0" prefWidth="154.0" style="-fx-border-color: #e6d3f2; -fx-background-color: #ac799b; -fx-background-radius: 6; -fx-border-radius: 6;" text="Generate CV" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="10.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </content>
 </ScrollPane>

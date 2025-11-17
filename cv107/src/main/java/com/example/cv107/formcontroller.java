@@ -6,10 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class formcontroller {
@@ -37,6 +41,30 @@ public class formcontroller {
     TextArea ab;
 
     @FXML
+    Button img;
+
+    private Image selectimg;
+
+    @FXML
+    private void up(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
+        );
+
+        File file = fileChooser.showOpenDialog(img.getScene().getWindow());
+        if (file != null) {
+            selectimg = new Image(file.toURI().toString());
+            // ❌ Form page e show korbo na, just store korbo
+        }
+    }
+
+    // Getter for Preview page
+    public Image getSelectedImage() {
+        return selectimg;
+    }
+
+    @FXML
     public void generate(ActionEvent event) throws IOException {
         String name1=user.getText();
         String email1=email.getText();
@@ -62,6 +90,8 @@ public class formcontroller {
         Sc3.displayy7(sk);
         Sc3.displayy8(exx);
         Sc3.displayy9(abb);
+
+        Sc3.setImage(getSelectedImage());
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
