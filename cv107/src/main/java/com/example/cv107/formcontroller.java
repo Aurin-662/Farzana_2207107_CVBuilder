@@ -38,6 +38,8 @@ public class formcontroller {
     TextArea ex;
     @FXML
     TextArea ab;
+    @FXML
+    TextField id;
 
     @FXML
     Button img;
@@ -108,6 +110,7 @@ public class formcontroller {
         String sk=skills.getText();
         String exx=ex.getText();
         String abb=ab.getText();
+        String id1=id.getText();
 
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("preview.fxml"));
@@ -123,6 +126,7 @@ public class formcontroller {
         Sc3.displayy7(sk);
         Sc3.displayy8(exx);
         Sc3.displayy9(abb);
+        Sc3.displayy10(id1);
 
         Sc3.setImage(getSelectedImage());
 

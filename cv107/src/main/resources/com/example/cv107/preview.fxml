@@ -26,6 +26,7 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
+                        <Label fx:id="linkedin" prefHeight="18.0" prefWidth="342.0" text="Linkedin" />
                      </children>
                   </VBox>
                </children>
@@ -58,7 +59,7 @@
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="edu" text="Label" textFill="WHITE">
+                              <Label fx:id="edu" alignment="TOP_LEFT" prefHeight="165.0" prefWidth="154.0" text="Label" textFill="WHITE">
                                  <padding>
                                     <Insets left="10.0" top="10.0" />
                                  </padding></Label>
@@ -71,7 +72,7 @@
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="skil" text="Label" textFill="WHITE">
+                              <Label fx:id="skil" alignment="TOP_LEFT" prefHeight="149.0" prefWidth="152.0" text="Label" textFill="WHITE">
                                  <padding>
                                     <Insets left="10.0" top="10.0" />
                                  </padding></Label>
@@ -91,7 +92,7 @@
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="about" alignment="TOP_LEFT" prefHeight="176.0" prefWidth="337.0" text="about">
+                              <Label fx:id="about" alignment="TOP_LEFT" prefHeight="176.0" prefWidth="337.0" text="about" textAlignment="CENTER">
                                  <padding>
                                     <Insets left="10.0" top="10.0" />
                                  </padding></Label>

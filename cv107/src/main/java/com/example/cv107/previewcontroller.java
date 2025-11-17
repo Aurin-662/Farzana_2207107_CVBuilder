@@ -35,6 +35,8 @@ public class previewcontroller {
     Label work;
     @FXML
     Label about;
+    @FXML
+    Label linkedin;
 
     @FXML
     private ImageView image;
@@ -73,4 +75,9 @@ public class previewcontroller {
     public void displayy9(String name9){
         about.setText( name9);
     }
+    public void displayy10(String name10){
+        linkedin.setText( name10);
+    }
+
+
 }
