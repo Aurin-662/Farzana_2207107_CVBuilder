@@ -7,17 +7,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="829.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="829.0" prefWidth="600.0" style="-fx-background-color: #f6f5f3;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv107.previewcontroller">
    <top>
-      <VBox alignment="CENTER" prefHeight="127.0" prefWidth="600.0" spacing="5.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="127.0" prefWidth="490.0" spacing="5.0" style="-fx-background-color: #f6f5f3;" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Name" textFill="#1e1417">
+            <Label fx:id="myname" text="Name" textFill="#1e1417">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label text="role" textFill="#555555">
+            <Label fx:id="role" text="role" textFill="#555555">
                <font>
                   <Font size="14.0" />
                </font>
@@ -31,34 +30,46 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
          <children>
-            <VBox prefHeight="662.0" prefWidth="189.0" spacing="10.0" style="-fx-background-color: lavender;">
+            <VBox prefHeight="662.0" prefWidth="189.0" spacing="10.0" style="-fx-background-color: #ddd0d1;">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Label text="CONTACT">
+                        <Label text="CONTACT" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="82.0" prefWidth="161.0" text="Label" />
+                        <Label fx:id="phone" prefHeight="38.0" prefWidth="159.0" text="Label" />
+                        <Label fx:id="mail" prefHeight="44.0" prefWidth="161.0" text="Label" />
+                        <Label fx:id="add" prefHeight="46.0" prefWidth="159.0" text="Label" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="188.0">
                      <children>
-                        <Label text="EDUCATION">
+                        <Label text="EDUCATION" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
+                        <Label prefHeight="30.0" prefWidth="155.0" text="Secondary School:" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="hsc" prefHeight="34.0" prefWidth="159.0" text="hsc" />
+                        <Label fx:id="ssc" prefHeight="46.0" prefWidth="28.0" text="Bsc" />
+                        <Label fx:id="versity" prefHeight="50.0" prefWidth="28.0" text="Label" />
                      </children>
                   </VBox>
+                  <Label fx:id="edu" text="Label" />
                   <VBox prefHeight="248.0" prefWidth="202.0">
                      <children>
-                        <Label text="SKILLS">
+                        <Label text="SKILLS" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
+                        <Label fx:id="skil" text="Label" />
                      </children>
                   </VBox>
                </children>
@@ -66,7 +77,7 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
             </VBox>
-            <VBox prefHeight="662.0" prefWidth="338.0" spacing="20.0">
+            <VBox prefHeight="662.0" prefWidth="338.0" spacing="20.0" style="-fx-background-color: #f0f0f0;">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
@@ -75,7 +86,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="176.0" prefWidth="337.0" text="about" />
+                        <Label fx:id="about" alignment="TOP_LEFT" prefHeight="176.0" prefWidth="337.0" text="about" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0">
@@ -85,7 +96,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="178.0" prefWidth="334.0" text="Label" />
+                        <Label fx:id="pro" alignment="TOP_LEFT" prefHeight="178.0" prefWidth="334.0" text="Label" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0">
@@ -95,7 +106,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label alignment="TOP_LEFT" prefHeight="193.0" prefWidth="338.0" text="Label" />
+                        <Label fx:id="work" alignment="TOP_LEFT" prefHeight="193.0" prefWidth="338.0" text="Label" />
                      </children>
                   </VBox>
                </children>
