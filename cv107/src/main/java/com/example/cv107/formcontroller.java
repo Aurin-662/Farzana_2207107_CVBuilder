@@ -26,13 +26,13 @@ public class formcontroller {
     @FXML
     TextField address;
     @FXML
-    TextField education;
+    TextArea education;
     @FXML
-    TextField projects;
+    TextArea projects;
     @FXML
-    TextField skills;
+    TextArea skills;
     @FXML
-    TextField ex;
+    TextArea ex;
     @FXML
     TextArea ab;
 
