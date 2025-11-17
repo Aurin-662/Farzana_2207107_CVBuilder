@@ -6,15 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 public class formcontroller {
     private Parent root;
@@ -66,6 +65,40 @@ public class formcontroller {
 
     @FXML
     public void generate(ActionEvent event) throws IOException {
+
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation Dialog");
+        alert.setHeaderText("Are you sure you want to generate the cv now?");
+        alert.setContentText("Click OK to proceed to the preview page.");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() &&result.get() != ButtonType.OK) {
+            return;
+        }
+
+        if (user.getText().isEmpty() || email.getText().isEmpty() || mobile.getText().isEmpty() ||
+                address.getText().isEmpty() || education.getText().isEmpty() || projects.getText().isEmpty() ||
+                skills.getText().isEmpty() || ex.getText().isEmpty() || ab.getText().isEmpty()) {
+
+            Alert warn = new Alert(Alert.AlertType.WARNING);
+            warn.setTitle("Missing Information");
+            warn.setHeaderText("Some fields are empty!");
+            warn.setContentText("Please fill out all fields before generating your CV.");
+            warn.showAndWait();
+            return;
+        }
+
+        if (!mobile.getText().matches("\\d{11}")) {
+            Alert mobileAlert = new Alert(Alert.AlertType.WARNING);
+            mobileAlert.setTitle("Invalid Mobile Number");
+            mobileAlert.setHeaderText("Mobile number must be exactly 11 digits!");
+            mobileAlert.setContentText("Please enter a valid 11-digit mobile number.");
+            mobileAlert.showAndWait();
+            return;
+        }
+
+
         String name1=user.getText();
         String email1=email.getText();
         String mb=mobile.getText();

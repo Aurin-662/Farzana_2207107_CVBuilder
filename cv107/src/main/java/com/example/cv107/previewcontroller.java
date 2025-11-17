@@ -73,27 +73,4 @@ public class previewcontroller {
     public void displayy9(String name9){
         about.setText( name9);
     }
-
-
-
-    private Parent root;
-    private Stage stage;
-    private Scene scene;
-
-
-    @FXML
-    public void preview(ActionEvent event) throws IOException {
-
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("form.fxml"));
-        root = loader.load();
-
-
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }
 }
