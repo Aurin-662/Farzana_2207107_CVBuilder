@@ -55,11 +55,11 @@ public class formcontroller {
         File file = fileChooser.showOpenDialog(img.getScene().getWindow());
         if (file != null) {
             selectimg = new Image(file.toURI().toString());
-            // ❌ Form page e show korbo na, just store korbo
+
         }
     }
 
-    // Getter for Preview page
+
     public Image getSelectedImage() {
         return selectimg;
     }
