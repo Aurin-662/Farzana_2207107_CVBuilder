@@ -12,6 +12,7 @@ module com.example.cv107 {
     requires com.almasb.fxgl.all;
     requires javafx.graphics;
     requires javafx.base;
+    requires java.sql;
 
     opens com.example.cv107 to javafx.fxml;
     exports com.example.cv107;
