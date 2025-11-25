@@ -47,6 +47,13 @@ public class formcontroller {
     private Image selectimg;
 
     @FXML
+    private void gohome(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+    }
+
+    @FXML
     private void up(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(
