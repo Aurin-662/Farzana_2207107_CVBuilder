@@ -195,14 +195,11 @@
                               <Insets bottom="20.0" left="10.0" />
                            </VBox.margin>
                         </Button>
-                              <Button mnemonicParsing="false" onAction="#generate" prefHeight="40.0" prefWidth="154.0" style="-fx-border-color: #e6d3f2; -fx-background-color: #542344; -fx-background-radius: 6; -fx-border-radius: 6;" text="Generate CV" textFill="WHITE">
-                                  <VBox.margin>
-                                      <Insets bottom="20.0" left="10.0" />
-                                  </VBox.margin>
-                                  <padding>
-                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                  </padding>
-                              </Button>
+                              <Button fx:id="generateBtn" text="Generate CV" onAction="#generate"
+                                      layoutX="200" layoutY="480" prefWidth="120" visible="true"/>
+
+                              <Button fx:id="updateBtn" text="Update CV" onAction="#update"
+                                      layoutX="340" layoutY="480" prefWidth="120" visible="false"/>
                           </children>
                      <padding>
                         <Insets left="10.0" />

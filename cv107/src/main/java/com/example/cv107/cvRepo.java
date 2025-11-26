@@ -25,10 +25,11 @@ public class cvRepo {
         return instance;
     }
 
+    // ✅ Insert new CV
     public int insertCV(cvModel cv) {
         String sql = """
-            INSERT INTO cvs (fullName, email, phone, address, education, skills, 
-                           workExperience, projects, photoPath, createdAt, updatedAt)
+            INSERT INTO cvs (fullName, email, phone, address, education, skills,
+                             workExperience, projects, photoPath, createdAt, updatedAt)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """;
 
@@ -61,9 +62,10 @@ public class cvRepo {
         return -1;
     }
 
+    // ✅ Update existing CV
     public boolean updateCV(cvModel cv) {
         String sql = """
-            UPDATE cvs SET fullName = ?, email = ?, phone = ?, address = ?, 
+            UPDATE cvs SET fullName = ?, email = ?, phone = ?, address = ?,
                           education = ?, skills = ?, workExperience = ?, projects = ?,
                           photoPath = ?, updatedAt = ?
             WHERE id = ?
@@ -94,6 +96,7 @@ public class cvRepo {
         return false;
     }
 
+    // ✅ Delete CV
     public boolean deleteCV(int id) {
         String sql = "DELETE FROM cvs WHERE id = ?";
 
@@ -109,6 +112,7 @@ public class cvRepo {
         return false;
     }
 
+    // ✅ Get CV by ID
     public cvModel getCVById(int id) {
         String sql = "SELECT * FROM cvs WHERE id = ?";
 
@@ -127,6 +131,7 @@ public class cvRepo {
         return null;
     }
 
+    // ✅ Get all CVs
     public List<cvModel> getAllCVs() {
         List<cvModel> cvs = new ArrayList<>();
         String sql = "SELECT * FROM cvs ORDER BY createdAt DESC";
@@ -144,6 +149,7 @@ public class cvRepo {
         return cvs;
     }
 
+    // ✅ Helper: Convert ResultSet → cvModel
     private cvModel extractCVFromResultSet(ResultSet rs) throws SQLException {
         cvModel cv = new cvModel();
         cv.setId(rs.getInt("id"));

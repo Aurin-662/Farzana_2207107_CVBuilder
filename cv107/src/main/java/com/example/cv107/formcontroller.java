@@ -1,5 +1,7 @@
 package com.example.cv107;
 
+import org.example.cv107.cvModel;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,36 +22,22 @@ public class formcontroller {
     private Stage stage;
     private Scene scene;
 
-    @FXML
-    TextField user;
-    @FXML
-    TextField email;
-    @FXML
-    TextField mobile;
-    @FXML
-    TextField address;
-    @FXML
-    TextArea education;
-    @FXML
-    TextArea projects;
-    @FXML
-    TextArea skills;
-    @FXML
-    TextArea ex;
-    @FXML
-    TextArea ab;
-    @FXML
-    TextField id;
-
-    @FXML
-    Button img;
-
+    private cvRepo repository;
     private Image selectimg;
+
+    @FXML private TextField user, email, mobile, address, id;
+    @FXML private TextArea education, projects, skills, ex, ab;
+    @FXML private Button img, generateBtn, updateBtn;
+
+    @FXML
+    public void initialize() {
+        repository = cvRepo.getInstance();
+    }
 
     @FXML
     private void gohome(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/cv107/hello-view.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
     }
 
@@ -59,88 +47,108 @@ public class formcontroller {
         fileChooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
         );
-
         File file = fileChooser.showOpenDialog(img.getScene().getWindow());
         if (file != null) {
             selectimg = new Image(file.toURI().toString());
-
         }
     }
-
 
     public Image getSelectedImage() {
         return selectimg;
     }
 
+    // ✅ Called from Edit button
+    public void loadCV(cvModel cv) {
+        user.setText(cv.getFullName());
+        email.setText(cv.getEmail());
+        mobile.setText(cv.getPhone());
+        address.setText(cv.getAddress());
+        education.setText(cv.getEducation());
+        projects.setText(cv.getProjects());
+        skills.setText(cv.getSkills());
+        ex.setText(cv.getWorkExperience());
+        ab.setText(cv.getPhotoPath());
+        id.setText(cv.getId() != null ? cv.getId().toString() : "");
+
+        generateBtn.setVisible(false);
+        updateBtn.setVisible(true);
+    }
+
     @FXML
     public void generate(ActionEvent event) throws IOException {
+        if (!validateFields()) return;
 
+        cvModel cv = new cvModel(user.getText(), email.getText(), mobile.getText(), address.getText(),
+                education.getText(), projects.getText(), skills.getText(), ex.getText(), ab.getText(), null);
 
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("Are you sure you want to generate the cv now?");
-        alert.setContentText("Click OK to proceed to the preview page.");
+        Task<Void> saveTask = new Task<>() {
+            @Override
+            protected Void call() {
+                repository.insertCV(cv);
+                return null;
+            }
+        };
+        new Thread(saveTask).start();
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent() &&result.get() != ButtonType.OK) {
-            return;
-        }
+        goToPreview(event, cv);
+    }
 
+    @FXML
+    public void update(ActionEvent event) throws IOException {
+        if (!validateFields()) return;
+
+        cvModel cv = new cvModel(user.getText(), email.getText(), mobile.getText(), address.getText(),
+                education.getText(), projects.getText(), skills.getText(), ex.getText(), ab.getText(), id.getText());
+
+        Task<Void> updateTask = new Task<>() {
+            @Override
+            protected Void call() {
+                repository.updateCV(cv);
+                return null;
+            }
+        };
+        new Thread(updateTask).start();
+
+        goToPreview(event, cv);
+    }
+
+    private boolean validateFields() {
         if (user.getText().isEmpty() || email.getText().isEmpty() || mobile.getText().isEmpty() ||
                 address.getText().isEmpty() || education.getText().isEmpty() || projects.getText().isEmpty() ||
                 skills.getText().isEmpty() || ex.getText().isEmpty() || ab.getText().isEmpty()) {
 
-            Alert warn = new Alert(Alert.AlertType.WARNING);
-            warn.setTitle("Missing Information");
-            warn.setHeaderText("Some fields are empty!");
-            warn.setContentText("Please fill out all fields before generating your CV.");
-            warn.showAndWait();
-            return;
+            new Alert(Alert.AlertType.WARNING, "Please fill out all fields.").showAndWait();
+            return false;
         }
 
         if (!mobile.getText().matches("\\d{11}")) {
-            Alert mobileAlert = new Alert(Alert.AlertType.WARNING);
-            mobileAlert.setTitle("Invalid Mobile Number");
-            mobileAlert.setHeaderText("Mobile number must be exactly 11 digits!");
-            mobileAlert.setContentText("Please enter a valid 11-digit mobile number.");
-            mobileAlert.showAndWait();
-            return;
+            new Alert(Alert.AlertType.WARNING, "Mobile number must be 11 digits.").showAndWait();
+            return false;
         }
 
+        return true;
+    }
 
-        String name1=user.getText();
-        String email1=email.getText();
-        String mb=mobile.getText();
-        String ad=address.getText();
-        String ed=education.getText();
-        String pro=projects.getText();
-        String sk=skills.getText();
-        String exx=ex.getText();
-        String abb=ab.getText();
-        String id1=id.getText();
-
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("preview.fxml"));
+    private void goToPreview(ActionEvent event, cvModel cv) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cv107/preview.fxml"));
         root = loader.load();
 
-        previewcontroller Sc3=loader.getController();
-        Sc3.displayy(name1);
-        Sc3.displayy2(email1);
-        Sc3.displayy3(mb);
-        Sc3.displayy4(ad);
-        Sc3.displayy5(ed);
-        Sc3.displayy6(pro);
-        Sc3.displayy7(sk);
-        Sc3.displayy8(exx);
-        Sc3.displayy9(abb);
-        Sc3.displayy10(id1);
-
-        Sc3.setImage(getSelectedImage());
+        previewcontroller previewCtrl = loader.getController();
+        previewCtrl.displayy(cv.getFullName());
+        previewCtrl.displayy2(cv.getEmail());
+        previewCtrl.displayy3(cv.getPhone());
+        previewCtrl.displayy4(cv.getAddress());
+        previewCtrl.displayy5(cv.getEducation());
+        previewCtrl.displayy6(cv.getProjects());
+        previewCtrl.displayy7(cv.getSkills());
+        previewCtrl.displayy8(cv.getWorkExperience());
+        previewCtrl.displayy9(cv.getPhotoPath());
+        previewCtrl.displayy10(cv.getId() != null ? cv.getId().toString() : "");
+        previewCtrl.setImage(getSelectedImage());
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 }
